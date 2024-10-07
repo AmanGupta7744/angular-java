@@ -4,6 +4,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY . /app
-RUN mvn clean package -Dmaven.test.skip=true
+RUN mvn clean package -Dmaven.test.skip=true -B -X
 EXPOSE 8080
 CMD ["java", "-jar", "target/spring-backend-v1.jar"]
